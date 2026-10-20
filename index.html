@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Find a delicious meal that fits your taste, budget, and schedule with Foodie AI.">
+  <title>Foodie AI — a little help choosing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Foodie AI home"><span class="brand-mark">f.</span><span>foodie<span class="brand-ai">ai</span></span></a>
+    <div class="top-note"><span class="status-dot"></span> Your next favorite is out there</div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✳</span> GOOD FOOD, LESS GUESSWORK</div>
+        <h1 id="page-title">What should<br> I eat <span>today?</span></h1>
+        <p class="intro">Tell us what you’re in the mood for. We’ll find something delicious that fits your day.</p>
+        <div class="hero-proof"><div class="proof-avatars"><span>🥑</span><span>🍜</span><span>🍕</span></div><span>Made for your mood, money &amp; minutes</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-sun"></div>
+        <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
+        <div class="plate-shadow"></div><div class="plate"><div class="plate-inner"><span class="plate-food food-a">🥑</span><span class="plate-food food-b">🍅</span><span class="plate-food food-c">🥬</span><span class="plate-food food-d">🍋</span><span class="plate-food food-e">🥕</span><span class="plate-food food-f">🫒</span><span class="plate-center">🥗</span></div></div>
+        <div class="art-tag"><span>✦</span> fresh picks<br>just for you</div>
+      </div>
+    </section>
+
+    <section class="finder" aria-labelledby="finder-title">
+      <div class="section-heading"><div><div class="eyebrow small">LET’S MAKE IT A GOOD ONE</div><h2 id="finder-title">Your food mood</h2></div><span class="step-label"><span>01</span> / 01</span></div>
+      <form id="food-form" novalidate>
+        <div class="form-grid">
+          <fieldset class="field preference-field">
+            <legend><span class="field-icon">⌘</span> What sounds good?</legend>
+            <div class="cuisine-options" role="group" aria-label="Choose a cuisine">
+              <button class="cuisine selected" type="button" data-cuisine="Any" aria-pressed="true"><span class="cuisine-emoji">✨</span>Anything</button>
+              <button class="cuisine" type="button" data-cuisine="Asian" aria-pressed="false"><span class="cuisine-emoji">🥢</span>Asian</button>
+              <button class="cuisine" type="button" data-cuisine="American" aria-pressed="false"><span class="cuisine-emoji">🍔</span>American</button>
+              <button class="cuisine" type="button" data-cuisine="Italian" aria-pressed="false"><span class="cuisine-emoji">🍝</span>Italian</button>
+              <button class="cuisine" type="button" data-cuisine="Mexican" aria-pressed="false"><span class="cuisine-emoji">🌮</span>Mexican</button>
+            </div>
+          </fieldset>
+          <div class="field budget-field">
+            <label for="budget"><span class="field-icon">＄</span> Max budget</label>
+            <div class="budget-input"><span>$</span><input id="budget" name="budget" type="number" min="1" max="500" step="0.5" value="18" inputmode="decimal" aria-describedby="budget-help"></div>
+            <span class="field-hint" id="budget-help">Per meal, in US dollars</span>
+          </div>
+          <div class="field time-field">
+            <label for="time"><span class="field-icon">◷</span> How much time?</label>
+            <div class="select-wrap"><select id="time" name="time"><option value="15">15 minutes</option><option value="30" selected>30 minutes</option><option value="60">60 minutes</option></select><span class="select-arrow">⌄</span></div>
+            <span class="field-hint">From prep to first bite</span>
+          </div>
+        </div>
+        <div class="form-bottom"><p class="form-assurance"><span>✦</span> Thoughtful ideas, no endless scrolling.</p><button class="primary-button" type="submit">Find my food <span>↗</span></button></div>
+        <p class="validation-message" id="validation-message" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section class="results" id="results" aria-live="polite" aria-labelledby="results-title" hidden>
+      <div class="results-heading"><div><div class="eyebrow small">A FEW GOOD IDEAS</div><h2 id="results-title">Made for your day<span class="heading-period">.</span></h2><p class="results-subtitle" id="results-subtitle">A little inspiration, coming right up.</p></div><button class="choose-button" id="choose-button" type="button">✦ <span>Choose for me</span></button></div>
+      <div class="recommendation-grid" id="recommendations"></div>
+      <p class="choice-message" id="choice-message" role="status" hidden></p>
+    </section>
+    <footer><span>© 2026 Foodie AI</span><span>Good things are cooking <span class="footer-heart">♥</span></span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
